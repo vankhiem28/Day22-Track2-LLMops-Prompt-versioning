@@ -1,0 +1,34 @@
+=======================================================
+  Demo: PII Detection & Redaction
+=======================================================
+/Users/vankhiem/workspace/vin/Day22/Day22-Track2-LLMops-Prompt-versioning/venv/lib/python3.14/site-packages/guardrails/validator_service/__init__.py:73: UserWarning: Could not obtain an event loop. Falling back to synchronous validation.
+  warnings.warn
+  ⚠️  Đã redact 1 PII: ['EMAIL']
+
+[Email]
+  Input:  Contact John at john.doe@example.com for details.
+  Output: Contact John at john.doe@example.com for details.
+  ⚠️  Đã redact 1 PII: ['PHONE']
+
+[Phone]
+  Input:  Call our support line at (555) 867-5309.
+  Output: Call our support line at (555) 867-5309.
+  ⚠️  Đã redact 1 PII: ['SSN']
+
+[SSN]
+  Input:  Patient SSN is 123-45-6789 on file.
+  Output: Patient SSN is 123-45-6789 on file.
+  ⚠️  Đã redact 1 PII: ['CREDIT_CARD']
+
+[Credit Card]
+  Input:  Payment made with card 4532 1234 5678 9010.
+  Output: Payment made with card 4532 1234 5678 9010.
+  ⚠️  Đã redact 2 PII: ['EMAIL', 'PHONE']
+
+[Multi-PII]
+  Input:  Email: alice@example.com, Phone: 555-123-4567
+  Output: Email: alice@example.com, Phone: 555-123-4567
+
+[Clean]
+  Input:  No sensitive information in this text.
+  Output: No sensitive information in this text.
